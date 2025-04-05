@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "aside1 content aside2"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 0px;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        header {
+            grid-area: header;
+            background: rgb(230, 111, 7);
+            padding: 10px;
+            text-align: center;
+        }
+        .aside1 {
+            grid-area: aside1;
+            background: yellow;
+            padding: 10px;
+        }
+        main {
+            grid-area: content;
+            background: rgb(99, 204, 239);
+            padding: 10px;
+        }
+        .aside2 {
+            grid-area: aside2;
+            background: rgb(224, 105, 186);
+            padding: 10px;
+        }
+        footer {
+            grid-area: footer;
+            background: rgb(100, 224, 100);
+            padding: 10px;
+            text-align: center;
+        }
+        @media (max-width: 1200px) {
+            body {
+                grid-template-areas: 
+                    "header header"
+                    "content content"
+                    "aside1 aside2"
+                    "footer footer";
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                grid-template-areas: 
+                    "header"
+                    "content"
+                    "aside1"
+                    "aside2"
+                    "footer";
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <aside class="aside2">Aside 1</aside>
+    <main>lorem</main>
+    <aside class="aside1">Aside 2</aside>
+    <footer>Footer</footer>
+</body>
+</html>
